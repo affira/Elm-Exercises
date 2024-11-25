@@ -1,0 +1,103 @@
+@hostname = localhost
+@port = 8080
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+@username = username
+@password = password
+@authorization = {{username}}:{{password}}
+
+###
+
+@name = register
+
+POST {{host}}/users/register HTTP/1.1
+Accept: {{contentType}}
+Content-Type: {{contentType}}
+
+{
+  "username": "username",
+  "password": "password"
+}
+
+###
+
+@name = login
+
+POST {{host}}/users/login HTTP/1.1
+Accept: {{contentType}}
+Content-Type: {{contentType}}
+
+{
+  "username": "username",
+  "password": "password"
+}
+
+###
+
+@name = getAllPlayers
+
+GET {{host}}/api/players HTTP/1.1
+Accept: {{contentType}}
+Authorization: Basic {{authorization}}
+
+###
+
+@name = getOnePlayer
+
+GET {{host}}/api/players/1 HTTP/1.1
+Accept: {{contentType}}
+Authorization: Basic {{authorization}}
+
+###
+
+@name = getIndex
+
+GET {{host}}/ HTTP/1.1
+
+###
+
+@name = createPlayerWithOnlyName
+
+POST {{host}}/api/players HTTP/1.1
+Accept: {{contentType}}
+Content-Type: {{contentType}}
+Authorization: Basic {{authorization}}
+
+{
+  "name": "Player Two"
+}
+
+###
+
+@name = createPlayerWithAllFields
+
+POST {{host}}/api/players HTTP/1.1
+Accept: {{contentType}}
+Content-Type: {{contentType}}
+Authorization: Basic {{authorization}}
+
+{
+  "name": "Player Three",
+  "isActive": true
+}
+
+###
+
+@name = updatePlayer
+
+PUT {{host}}/api/players/8 HTTP/1.1
+Accept: {{contentType}}
+Authorization: Basic {{authorization}}
+Content-Type: {{contentType}}
+
+{
+  "isActive": true
+}
+
+###
+
+@name = deletePlayer
+
+DELETE {{host}}/api/players/7 HTTP/1.1
+Accept: {{contentType}}
+Authorization: Basic {{authorization}}

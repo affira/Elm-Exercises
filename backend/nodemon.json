@@ -1,0 +1,24 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "db/db.json",
+    "http/api.http",
+    "node_modules/*",
+    "public/*",
+    "test/*",
+    "views/*"
+  ],
+  "watch": ["*.js", "*.mjs", "*.json"],
+  "verbose": false,
+  "env": {
+    "NODE_ENV": "development",
+    "DEBUG": "backend:*",
+    "PORT": 3001
+  },
+  "ext": "js,mjs,json",
+  "delay": 1500,
+  "events": {
+    "start": "cls || clear"
+  }
+}

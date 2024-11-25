@@ -1,0 +1,42 @@
+{
+  "name": "player-backend-lowdb-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "private": true,
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "scripts": {
+    "elm-crud": "nodemon index.mjs elm-crud",
+    "elm-crud2": "nodemon index.mjs elm-crud2",
+    "elm-fetch": "nodemon index.mjs elm-fetch",
+    "react-crud": "nodemon index.mjs react-crud",
+    "react-crud2": "nodemon index.mjs react-crud2",
+    "react-fetch": "nodemon index.mjs react-fetch",
+    "redux-thunk": "nodemon index.mjs redux-thunk",
+    "vue-crud": "nodemon index.mjs vue-crud",
+    "vue-crud2": "nodemon index.mjs vue-crud2",
+    "vue-fetch": "nodemon index.mjs vue-fetch",
+    "vuex-crud": "nodemon index.mjs vuex-crud",
+    "vuex-crud2": "nodemon index.mjs vuex-crud2",
+    "vuex-fetch": "nodemon index.mjs vuex-fetch",
+    "reset-db": "node db/reset-db.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Janne Miilunpalo <janne.miilunpalo@tuni.fi>",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "debug": "^4.3.3",
+    "express": "^4.17.1",
+    "helmet": "^6.0.1",
+    "joi": "^17.5.0",
+    "lowdb": "^3.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
