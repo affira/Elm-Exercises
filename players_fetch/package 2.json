@@ -1,0 +1,24 @@
+{
+  "name": "elm-crud",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "elm-test",
+    "frontend": "elm reactor --port=5500",
+    "dev": "chokidar \"**/*.elm\" -c \"npm run compile\" --initial  --verbose",
+    "compile": "elm make src/Main.elm --output=index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
+  },
+  "dependencies": {
+    "elm": "^0.19.1-5",
+    "elm-test": "^0.19.1-revision11"
+  }
+}

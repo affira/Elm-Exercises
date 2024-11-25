@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="libs/mocha.css" />
+    <style>
+      #wrapper {
+        visibility: hidden;
+        height: 0px;
+      }
+    </style>
+    <title>Players CRUD2</title>
+  </head>
+  <body>
+    <!-- Mocha test results -->
+    <div id="mocha"></div>
+
+    <!-- Wrapper needed for tests and styles, div#app required by the app -->
+    <div id="wrapper">
+      <div id="app"></div>
+    </div>
+
+    <!-- Load necessary libraries (mocha, chai, etc) -->
+    <script src="libs/chai.4.3.7.js"></script>
+    <script src="libs/mocha.10.2.0.js"></script>
+    <script src="libs/sinon.15.0.1.js"></script>
+
+    <!-- Initialize mocha -->
+    <script class="mocha-init">
+      mocha.setup({
+        slow: '750',
+        timeout: '5000',
+        ui: 'bdd'
+      });
+      mocha.checkLeaks();
+
+      // all publicly available stuff mocha should be aware of
+      // mocha.globals(['server', 'playersData'])
+    </script>
+
+    <!--
+      Load all application related files
+      (only minimal required files to make the tests and functions to run)
+    -->
+    <script src="../index.js"></script>
+
+    <!-- Load tests in the order you want them to be executed -->
+    <script src="tests/CRUD2.test.js"></script>
+
+    <!-- Run mocha -->
+    <script class="mocha-exec">
+      mocha.run();
+    </script>
+  </body>
+</html>
